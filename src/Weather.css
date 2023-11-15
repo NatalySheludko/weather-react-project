@@ -55,6 +55,7 @@
 }
 
 .icon-box {
+  display: flex;
   margin-left: 60px;
   background-color: rgba(175, 241, 241, 0.966);
   border-radius: 10px;
@@ -65,12 +66,12 @@
 }
 
 .weather-icon {
-  padding-bottom: 40px;
+  padding: 0 12px;
 }
 
 .current-temperature {
   font-size: 65px;
-  margin-right: 12px;
+  margin-right: 15px;
 }
 
 .unit {
@@ -78,7 +79,7 @@
   color: #3758cb;
   font-weight: 600;
   position: relative;
-  top: -30px;
+  top: -15px;
   left: -15px;
 }
 
