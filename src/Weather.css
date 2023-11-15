@@ -1,0 +1,114 @@
+.Weather {
+  padding: 50px 30px;
+  border: 1px solid #dadde1;
+  background-color: rgb(190, 178, 178);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      rgba(188, 228, 235, 0.825),
+      rgba(188, 228, 235, 0.825)
+    ),
+    url(blue-sky.jpg);
+  background-size: cover;
+  max-width: 1100px;
+  height: 550px;
+  background-position: center;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
+.search-line {
+  padding-left: 140px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.search-line:hover::before {
+  position: absolute;
+  content: "Weather App";
+  left: 2;
+  bottom: 40px;
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+  color: rgba(255, 0, 0, 0.685);
+}
+
+.heading {
+  padding-left: 60px;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.heading-text {
+  font-family: "Dancing Script", cursive;
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.box {
+  display: flex;
+}
+
+.icon-box {
+  margin-left: 60px;
+  background-color: rgba(175, 241, 241, 0.966);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  box-shadow: 0px 2px 22px rgba(57, 109, 137, 0.4);
+}
+
+.weather-icon {
+padding-bottom: 40px;
+}
+
+.current-temperature {
+  font-size: 65px;
+  margin-right: 12px;
+}
+
+.unit {
+  font-size: 23px;
+  color: #3758cb;
+  font-weight: 600;
+  position: relative;
+  top: -30px;
+  left: -15px;
+}
+
+.feels-like-box {
+  align-items: center;
+  justify-content: center;
+  margin-right: 110px;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.07em;
+  padding-top: 10px;
+}
+
+.degree-color {
+  color: #3758cb;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.description-box {
+  align-items: center;
+  justify-content: center;
+  margin-right: 150px;
+  font-size: 22px;
+}
+
+.weather-menu {
+  list-style-type: none;
+}
+
+.main-heading {
+  font-family: "Dancing Script", cursive;
+}
