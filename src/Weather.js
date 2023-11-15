@@ -14,8 +14,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       city: response.data.city,
-      icon: response.data.condition.icon,
-      /*iconUrl: response.data.condition.icon_url,*/
+      icon: response.data.condition.icon, 
       temperature: Math.round(response.data.temperature.current),
       feels_like: Math.round(response.data.temperature.feels_like),
       humidity: response.data.temperature.humidity,
@@ -26,9 +25,9 @@ export default function Weather(props) {
   }
 
   function search() {
-const apiKey = "6fa3cb02fc6ct4bd31ab65905b1ado1a";
-const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${showCity}&key=${apiKey}&units=metric`;
-axios.get(apiUrl).then(handleResponse);
+    const apiKey = "6fa3cb02fc6ct4bd31ab65905b1ado1a";
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${showCity}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleSubmit(event) {

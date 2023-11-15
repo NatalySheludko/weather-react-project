@@ -1,7 +1,6 @@
 import React from "react";
 
-
-import Forecast from "./Forecast";
+import WeatherTemperature from "./WeatherTemperature";
 import FormatDate from "./FormatDate";
 import WeatherAnimatedIcon from "./WeatherAnimatedIcon";
 
@@ -17,10 +16,9 @@ export default function WeatherInfo(props) {
             <div className="weather-icon text-capitalize">
               <WeatherAnimatedIcon code={props.data.icon} />
             </div>
-            <span className="current-temperature">
-              {props.data.temperature}
-            </span>
-            <span className="unit">°C</span>
+            <div>
+              <WeatherTemperature celsius={props.data.temperature} />
+            </div>
           </div>
         </div>
 
@@ -50,13 +48,7 @@ export default function WeatherInfo(props) {
           </div>
         </div>
       </div>
-      <Forecast />
     </div>
   );
 }
-/*<img
-              src={props.data.iconUrl}
-              alt={props.data.description}
-              width="120"
-              className="weather-icon text-capitalize"
-            */
+
