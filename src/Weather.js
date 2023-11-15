@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { FidgetSpinner } from "react-loader-spinner";
 import axios from "axios";
 
-import Forecast from "./Forecast";
-import FormatDate from "./FormatDate";
+import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [showWeatherData, setWeatherData] = useState({ ready: false });
+  const [showCity, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
+    /*console.log(response.data);*/
     setWeatherData({
       ready: true,
       city: response.data.city,
@@ -24,10 +24,27 @@ export default function Weather(props) {
     });
   }
 
+  function search() {
+const apiKey = "6fa3cb02fc6ct4bd31ab65905b1ado1a";
+const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${showCity}&key=${apiKey}&units=metric`;
+axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+    //search for a city
+  }
+
+  function handleCityChange(event) {
+    //update city
+    setCity(event.target.value);
+  }
+
   if (showWeatherData.ready) {
     return (
       <div className="Weather">
-        <form className="search-line">
+        <form className="search-line" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -35,6 +52,7 @@ export default function Weather(props) {
                 placeholder="Search a city..."
                 className="form-control"
                 autoFocus="on"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
@@ -43,60 +61,11 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h2 className="heading">
-          <span className="heading-text">Result:</span> {props.defaultCity}
-        </h2>
-        <div className="row">
-          <div className="col-4 box">
-            <div className="icon-box">
-              <img
-                src={showWeatherData.iconUrl}
-                alt={showWeatherData.description}
-                width="120"
-                className="weather-icon text-capitalize"
-              />
-              <span className="current-temperature">
-                {showWeatherData.temperature}
-              </span>
-              <span className="unit">°C</span>
-            </div>
-          </div>
-
-          <div className="col-4 box">
-            <div className="feels-like-box">
-              <ul className="weather-menu">
-                <li>
-                  Feels like: {showWeatherData.feels_like}
-                  <span className="degree-color">°</span>
-                </li>
-                <li>Humidity: {showWeatherData.humidity}%</li>
-                <li>Wind: {showWeatherData.wind} km/h</li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-4 box">
-            <div className="description-box">
-              <ul className="weather-menu">
-                <li>
-                  <h1 className="main-heading">Weather</h1>
-                </li>
-                <li>
-                  <FormatDate date={showWeatherData.date} />
-                </li>
-                <li className="text-capitalize">
-                  {showWeatherData.description}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <Forecast />
+        <WeatherInfo data={showWeatherData} />
       </div>
     );
   } else {
-    const apiKey = "6fa3cb02fc6ct4bd31ab65905b1ado1a";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
 
     return (
       <FidgetSpinner
