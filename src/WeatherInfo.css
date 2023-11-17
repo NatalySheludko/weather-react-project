@@ -1,0 +1,65 @@
+.heading {
+  padding-left: 60px;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0;
+}
+
+.heading-text {
+  font-family: "Dancing Script", cursive;
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.box {
+  display: flex;
+  flex-grow: 1;
+}
+
+.icon-box {
+  display: flex;
+  background-color: rgba(175, 241, 241, 0.966);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+  box-shadow: 0px 2px 22px rgba(57, 109, 137, 0.4);
+  margin-left: 60px;
+}
+
+.feels-like-box {
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.07em;
+  padding-top: 10px;
+}
+
+.degree-color {
+  color: #3758cb;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.description-box {
+  align-items: center;
+  justify-content: center;
+  padding-right: 150px;
+  font-size: 22px;
+}
+
+.weather-menu {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.main-heading {
+  font-family: "Dancing Script", cursive;
+  margin: 0;
+}
