@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import { FidgetSpinner } from "react-loader-spinner";
 import axios from "axios";
 
+import "./Weather.css";
+
 import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
-import "./Weather.css";
 
 export default function Weather(props) {
   const [showWeatherData, setWeatherData] = useState({ ready: false });
   const [showCity, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    /*console.log(response.data);*/
+    //console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coordinates,
@@ -26,12 +27,6 @@ export default function Weather(props) {
     });
   }
 
-  function search() {
-    const apiKey = "6fa3cb02fc6ct4bd31ab65905b1ado1a";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${showCity}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -41,6 +36,12 @@ export default function Weather(props) {
   function handleCityChange(event) {
     //update city
     setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "6fa3cb02fc6ct4bd31ab65905b1ado1a";
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${showCity}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (showWeatherData.ready) {
@@ -69,7 +70,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-
     return (
       <FidgetSpinner
         visible={true}

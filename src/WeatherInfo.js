@@ -1,10 +1,10 @@
 import React from "react";
 
+import "./WeatherInfo.css";
+
 import WeatherAnimatedIcon from "./WeatherAnimatedIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import FormatDate from "./FormatDate";
-import "./WeatherInfo.css";
-
 
 export default function WeatherInfo(props) {
   return (
@@ -13,8 +13,8 @@ export default function WeatherInfo(props) {
         <span className="heading-text">Result:</span> {props.data.city}
       </h2>
       <div className="row">
-        <div className="col-4 box">
-          <div className="icon-box">
+        <div className="col-4">
+          <div className="main-box">
             <div className="weather-icon text-capitalize">
               <WeatherAnimatedIcon code={props.data.icon} size={52} />
             </div>
@@ -23,8 +23,7 @@ export default function WeatherInfo(props) {
             </div>
           </div>
         </div>
-
-        <div className="col-4 box">
+        <div className="col-4">
           <div className="feels-like-box">
             <ul className="weather-menu">
               <li>
@@ -36,7 +35,7 @@ export default function WeatherInfo(props) {
             </ul>
           </div>
         </div>
-        <div className="col-4 box">
+        <div className="col-4">
           <div className="description-box">
             <ul className="weather-menu">
               <li>
@@ -53,4 +52,3 @@ export default function WeatherInfo(props) {
     </div>
   );
 }
-

@@ -1,12 +1,14 @@
 .Weather {
-  padding: 50px 30px;
+  padding: 30px 30px;
 }
 
 .search-line {
-  padding-left: 140px;
+  display: block;
+  margin: 0 auto;
   position: relative;
   margin-bottom: 30px;
   padding-top: 40px;
+  padding-left: 120px;
 }
 
 .search-line:hover::before {
@@ -21,10 +23,3 @@
   letter-spacing: 0.07em;
   color: rgba(255, 0, 0, 0.685);
 }
-
-
-
-
-
-
-
