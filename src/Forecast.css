@@ -1,0 +1,41 @@
+.Forecast {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-box {
+  background-color: #d1f4ff;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 15px;
+  box-shadow: 0px 2px 22px rgba(57, 109, 137, 0.4);
+}
+
+.forecast-box:hover {
+  animation: animate125 250ms infinite;
+  transform: scale(1.15);
+  background-color: azure;
+}
+
+.temperature-forecast-day,
+.temperature-forecast-night {
+  font-size: 18px;
+}
+
+.temperature-forecast-night {
+  opacity: 0.6;
+}
+
+.degree {
+  color: #3758cb;
+  font-weight: 500;
+  font-size: 18px;
+}

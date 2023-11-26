@@ -3,6 +3,7 @@ import { FidgetSpinner } from "react-loader-spinner";
 import axios from "axios";
 
 import WeatherInfo from "./WeatherInfo";
+import Forecast from "./Forecast";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -13,8 +14,9 @@ export default function Weather(props) {
     /*console.log(response.data);*/
     setWeatherData({
       ready: true,
+      coordinates: response.data.coordinates,
       city: response.data.city,
-      iconUrl: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
       temperature: Math.round(response.data.temperature.current),
       feels_like: Math.round(response.data.temperature.feels_like),
       humidity: response.data.temperature.humidity,
@@ -62,6 +64,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={showWeatherData} />
+        <Forecast coordinates={showWeatherData.coordinates} />
       </div>
     );
   } else {

@@ -1,12 +1,11 @@
 .Weather {
   padding: 50px 30px;
-  margin-bottom: 100px;
 }
 
 .search-line {
   padding-left: 140px;
   position: relative;
-  margin-bottom: 65px;
+  margin-bottom: 30px;
   padding-top: 40px;
 }
 
